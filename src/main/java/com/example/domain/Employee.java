@@ -41,7 +41,7 @@ public class Employee {
     /**
      * 郵便番号
      */
-    private String zopCode;
+    private String zipCode;
     /**
      * 住所
      */
