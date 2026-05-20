@@ -1,5 +1,13 @@
 package com.example.form;
 
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
 /**
  * 管理者情報登録時に使用するフォーム
  */
