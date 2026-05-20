@@ -4,6 +4,7 @@ import com.example.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
@@ -46,7 +47,6 @@ public class EmployeeRepository {
      *
      * @return 登録されている従業員情報のリスト
      */
-
     public List<Employee> findAll() {
         String sql = """
                 select id, name, image, gender, hire_date, mail_address, zip_code,
@@ -55,6 +55,18 @@ public class EmployeeRepository {
                 order by hire_date desc""";
 
         return template.query(sql, EMPLOYEE_ROW_MAPPER);
+    }
+
+    public Employee findById(Integer id) {
+        String sql = """
+                select id, name, image, gender, hire_date, mail_address, zip_code,
+                       address, telephone, salary, characteristics, dependents_count
+                from employees
+                where id = :id;
+                """;
+
+        SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
+        return template.queryForObject(sql, param, EMPLOYEE_ROW_MAPPER);
     }
 
     /**
