@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,8 +27,7 @@ public class EmployeeController {
      */
     @GetMapping("/show-list")
     public String showList(Model model) {
-        List<Employee> employeeList = new ArrayList<>();
-        employeeList = employeeService.showList();
+        List<Employee> employeeList = employeeService.showList();
         model.addAttribute("employeeList", employeeList);
         return "employee/list";
     }
