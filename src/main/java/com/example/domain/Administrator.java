@@ -9,6 +9,10 @@ import lombok.*;
 @ToString
 @Builder
 
+/**
+ * 管理者情報を表すドメイン.
+ * */
+
 public class Administrator {
     /**
      * ID
