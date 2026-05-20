@@ -27,12 +27,24 @@ public class EmployeeService {
     }
 
     /**
-     * 従業員情報をid指定で検索する
+     * 従業員情報をid指定で検索する.
      *
      * @param id ID
      * @return 指定されたIDを持つ従業員
      */
     public Employee showDetail(Integer id) {
         return employeeRepository.findById(id);
+    }
+
+    /**
+     * 扶養人数を更新する.
+     *
+     * @param employeeId 従業員ID
+     * @param newCount   更新する扶養人数
+     */
+    public void updateDependentsCount(Integer employeeId, Integer newCount) {
+        Employee employee = employeeRepository.findById(employeeId);
+        employee.setDependentsCount(newCount);
+        employeeRepository.update(employee);
     }
 }
