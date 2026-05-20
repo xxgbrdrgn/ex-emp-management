@@ -8,11 +8,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
-@Transactional
 /**
  * 従業員情報を操作するServiceクラス.
  */
+@Service
+@Transactional
 public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;

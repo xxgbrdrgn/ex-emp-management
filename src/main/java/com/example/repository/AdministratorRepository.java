@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 /**
- * administratorsテーブルを操作するリポジトリ(Dao)
+ * administratorsテーブルを操作するリポジトリ(Dao).
  */
 @Repository
 public class AdministratorRepository {
@@ -54,7 +54,6 @@ public class AdministratorRepository {
      * 1件も検索されなければnullを返す
      *
      */
-
     public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
         SqlParameterSource param = new MapSqlParameterSource().addValue("mailAddress", mailAddress)
                 .addValue("password", password);

@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 管理者登録画面のコントローラー
+ * 管理者登録画面のコントローラー.
  */
 @Controller
-
 @RequestMapping("/")
 public class AdministratorController {
     @Autowired
@@ -26,10 +25,10 @@ public class AdministratorController {
     private HttpSession session;
 
     /**
-     * administrator/insertにフォワードする処理.
+     * 管理者画面を表示する.
      *
-     * @param form 入力情報をもつオブジェクトform
-     * @return insertのpath
+     * @param form フォーム
+     * @return 管理者画面
      */
     @GetMapping("/to-insert")
     public String toInsert(InsertAdministratorForm form) {
@@ -37,10 +36,10 @@ public class AdministratorController {
     }
 
     /**
-     * 管理者DBにinsertする.
+     * 管理者情報を登録する.
      *
      * @param form 挿入する管理者の情報を持つformオブジェクト
-     * @return "/"へリダイレクト
+     * @return ログイン画面
      */
     @PostMapping("/insert")
     public String insert(InsertAdministratorForm form) {
@@ -51,10 +50,10 @@ public class AdministratorController {
     }
 
     /**
-     * administrator/loginにフォワードする.
+     * ログイン画面に遷移.
      *
      * @param form 入力された管理者情報を保持するformオブジェクト
-     * @return /loginのpath
+     * @return ログイン画面
      */
     @GetMapping("/")
     public String toLogin(LoginForm form) {
@@ -64,9 +63,9 @@ public class AdministratorController {
     /**
      * login処理を行う.
      *
-     * @param form  ログインに必要な情報を保持するformオブジェクト
-     * @param model エラーメッセージを格納するためのrequestスコープ
-     * @return 従業員情報のリストを参照する/show-listのpath
+     * @param form  フォーム
+     * @param model requestスコープ
+     * @return 従業員情報一覧画面
      */
     @PostMapping("/login")
     public String login(LoginForm form, Model model) {

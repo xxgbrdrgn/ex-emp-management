@@ -2,15 +2,16 @@ package com.example.form;
 
 import lombok.*;
 
+/**
+ * 従業員情報更新時に使うフォーム.
+ */
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-/**
- * 従業員情報更新時に使うフォーム
- */
 public class UpdateEmployeeForm {
     /**
      * 従業員ID

@@ -2,15 +2,15 @@ package com.example.form;
 
 import lombok.*;
 
+/**
+ * 管理者情報登録時に使用するフォーム
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Builder
-/**
- * 管理者情報登録時に使用するフォーム
- */
 public class InsertAdministratorForm {
     /**
      * 名前

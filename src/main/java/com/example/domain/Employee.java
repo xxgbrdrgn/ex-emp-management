@@ -2,17 +2,15 @@ package com.example.domain;
 
 import lombok.*;
 
+/**
+ * 従業員情報を表すドメイン.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Builder
-
-
-/**
- * 従業員情報を表すドメイン.
- */
 public class Employee {
     /**
      * ID
